@@ -242,6 +242,32 @@ footer { padding-block: 32px 48px; border-top: 1px solid var(--line); color: var
     <div class="projects">
       <article class="project featured">
         <div>
+          <span class="label">Featured · Engineering tool</span>
+          <h3>Wire Harness Calculator</h3>
+          <p>Picks the right wire gauge for every part on a harness BOM. For each part it finds the thinnest wire that carries the current (corrected for ambient temperature), keeps voltage drop within your limit over the run length, and fits every terminal listed for that part. When no gauge passes all three, it flags the part and says what to change. It runs as a command-line tool and as a browser app that runs the same Python code through Pyodide, so there's no server to host.</p>
+          <div class="metrics">
+            <div class="metric"><b>3</b><span>checks per wire: current, drop, terminal fit</span></div>
+            <div class="metric"><b>2</b><span>interfaces: command line and web</span></div>
+            <div class="metric"><b>J1128</b><span>SAE TXL wire data</span></div>
+          </div>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Pyodide</span><span class="tag">JavaScript</span><span class="tag">pytest</span><span class="tag">CSV / Markdown reports</span></div>
+          <div class="links"><a href="https://silva365.github.io/wire-harness-calculator/">Try it →</a><a href="https://github.com/silva365/wire-harness-calculator">View on GitHub →</a></div>
+        </div>
+        <div class="excerpt">
+          <span class="label">Example output (some columns hidden)</span>
+<pre><span class="c">$ harnesscalc front_lighting.csv</span>
+<span class="c">12 V · max drop 5% · ambient 30 C</span>
+
+<span class="kw">PART             LOAD A  AWG  SET BY        STATUS</span>
+Headlamp left    4.6     16   voltage drop  <span class="s">OK</span>
+Horn             8       16   voltage drop  <span class="s">OK</span>
+Fuel pump        10      -    voltage drop  <span class="kw">CHECK</span>
+Cooling fan      18      12   terminal      <span class="s">OK</span></pre>
+        </div>
+      </article>
+
+      <article class="project featured">
+        <div>
           <span class="label">Featured · SQL analytics</span>
           <h3>ShopLens</h3>
           <p>SQL analytics for an online store. A Python script generates a realistic SQLite database, then six queries answer business questions: monthly revenue and growth, cohort retention, RFM customer segments, top products by category, time between repeat purchases, and cleaning a messy customer file. A separate script checks the data's integrity.</p>
